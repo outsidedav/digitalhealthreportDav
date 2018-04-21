@@ -1,4 +1,4 @@
-console.log('Test 1!');
+console.log('Test 2!');
 
 function Get(yourUrl){
     var Httpreq = new XMLHttpRequest(); // a new request
@@ -7,7 +7,12 @@ function Get(yourUrl){
     return Httpreq.responseText;          
 }
 
-yourUrl = 'https://tosdr.org/api/1/service/facebook.json'
+function tosdr(site){
+	link = 'https://tosdr.org/api/1/service/' + site  + '.json';
+	return link;
+}
+testSite = 'facebook';
+yourUrl = tosdr(testSite);
+
 var json_obj = JSON.parse(Get(yourUrl));
-console.log('Test 2!');
 console.log(json_obj.pointsData);
