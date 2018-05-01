@@ -18,7 +18,7 @@ function showData() {
     console.log(newQuery);
 
     xhr.open('GET',pwnd(newQuery),false);
-    //xhr.setRequestHeader('User-Agent : Digital-Health-Checker');
+
     xhr.send();
     
     console.log(xhr.status);
@@ -28,12 +28,12 @@ function showData() {
         console.log(response);    
         
         if(response[0] !== undefined){
-            document.getElementById("writeData").innerHTML = response[0].Description;
+            document.getElementById("detailsPWND").innerHTML = response[0].Description;
             console.log(response[0].Description);
         
         }
         if(response[0] == undefined){
-            document.getElementById("writeData").innerHTML = "No breach found";
+            document.getElementById("detailsPWND").innerHTML = "No breach found";
             
         
         }
